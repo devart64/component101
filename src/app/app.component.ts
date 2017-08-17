@@ -4,17 +4,33 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template:
    `
-  <h1>Hey guys !</h1>
-<button (mouseenter)="myEvent($event)">My Button</button>
+  <h1 [ngClass]="titleClasses">Hey guys !</h1>
+
 
   `,
-  styleUrls: ['./app.component.css']
+  styles: [`
+h1 {
+	text-decoration:underline;
+}
+
+.red-title {
+	color: red;
+}
+.large-title {
+	font-size:4em;
+}
+
+  `]
+
 })
 
 export class AppComponent {
  
-  	myEvent(event){
-      console.log(event);
-  	}
+  titleClass = true;
+  titleClasses = {
+  	'red-title':true,
+  	'large-title':true
+  }
+
 }
 
