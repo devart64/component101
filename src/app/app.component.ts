@@ -5,17 +5,14 @@ import { Component } from '@angular/core';
   template:
    `
   <h1>Hey guys !</h1>
-  <div *ngIf="myArr; then Tmpl1 else Tmpl2"></div>
-  
-  <ng-template #Tmpl1>Truth</ng-template>
-  <ng-template #Tmpl2>False</ng-template>
+<button [disabled]="buttonStatus == 'enabled'">My Button</button>
+
   `,
   styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
  
-  myArr = true;	
-
+  	buttonStatus = 'enabled';
 }
 
